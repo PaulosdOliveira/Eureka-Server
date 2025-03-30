@@ -1,6 +1,6 @@
 spring:
   application:
-    name: mscartoes
+    name: msavaliadorcartao
   rabbitmq:
     host: localhost
     port: 5672
@@ -15,8 +15,11 @@ eureka:
     service-url:
       defaultZone: http://cursoms-eureka-user:123@localhost:8761/eureka
   instance:
-    instance-id:  ${spring.application.name}:${spring.application.instance-id:${random.value}}
+    instance-id: ${spring.application.name}:${spring.applicaton.instance_id:${random.value}}
     hostname: localhost
+
 mq:
   queues:
     emissao-cartoes: emissao-cartoes
+
+

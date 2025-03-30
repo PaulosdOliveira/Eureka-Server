@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -34,16 +35,18 @@ public class CartaoController {
     @GetMapping(params = "renda")
     public ResponseEntity<List<Cartao>> getCartoesRendaAte(@RequestParam("renda") Long renda) {
         var lista = service.buscarCartao(renda);
+        System.out.println(lista.get(0).getNome());
         return ResponseEntity.ok(lista);
     }
 
     @GetMapping(params = "cpf")
     public ResponseEntity<List<CartoesPorClienteResponse>> getCartoesByCliente(@RequestParam String cpf) {
         var lista = clienteCartaoService.getByCpf(cpf);
+        System.out.println(lista.get(0).getLimite() + "################################");
       List<CartoesPorClienteResponse> resultado = lista.stream()
               .map(CartoesPorClienteResponse::fromModel).toList();
+        System.out.println("LIsta final: " + resultado.get(0).getLimiteLiberado() + "@@@@@@@@@@@@@@@@@@@@@@@@@");
         return ResponseEntity.ok(resultado);
     }
-
 }
 

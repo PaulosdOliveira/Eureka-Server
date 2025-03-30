@@ -1,21 +1,19 @@
-package io.github.paulosdoliiveira.mscartoes;
+package io.github.paulosdoliveira.msavaliadorcartao;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients
 @EnableRabbit
-@Slf4j
-public class MscartoesApplication {
+public class MsavaliadorcartaoApplication {
 
 	public static void main(String[] args) {
-		log.info("Informação {}", "Teste info");
-		SpringApplication.run(MscartoesApplication.class, args);
+		SpringApplication.run(MsavaliadorcartaoApplication.class, args);
 	}
 
 }

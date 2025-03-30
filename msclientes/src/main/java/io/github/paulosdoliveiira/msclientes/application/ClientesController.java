@@ -14,6 +14,8 @@ import java.net.URI;
 @RequestMapping("clientes")
 public class ClientesController {
 
+    //swagger-ui/index.html
+
     @Autowired
     private ClienteService service;
 
