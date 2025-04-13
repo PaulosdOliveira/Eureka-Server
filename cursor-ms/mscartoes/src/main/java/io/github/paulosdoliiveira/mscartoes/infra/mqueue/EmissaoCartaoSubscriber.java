@@ -1,6 +1,5 @@
 package io.github.paulosdoliiveira.mscartoes.infra.mqueue;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.paulosdoliiveira.mscartoes.infra.repository.CartaoRepository;
 import io.github.paulosdoliiveira.mscartoes.infra.repository.ClienteCartaoRepository;
